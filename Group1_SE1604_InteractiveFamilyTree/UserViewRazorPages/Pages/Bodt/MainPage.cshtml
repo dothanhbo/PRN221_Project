@@ -1,0 +1,91 @@
+﻿@page
+@using BussinessObject.Models
+@using Microsoft.AspNetCore.Html
+@model UserViewRazorPages.Pages.Bodt.IndexModel
+
+@{
+    ViewData["Title"] = "Family Tree";
+    Layout = "_UserLayout";
+}
+<link rel="stylesheet" href="/css/MainPage.css" />
+<h1>Family Tree</h1>
+<a asp-page="/Bodt/ChooseRelation" asp-route-id=1 class="styled-button">Add</a>
+@if (Model.Users != null && Model.Users.Count > 0)
+{
+    <div>
+        @foreach (var user in Model.Users)
+        {
+            @if (Model.Users.IndexOf(user) == @Model.MainUser){
+                @RenderMain(user)
+                @RenderPartner(user)
+                ;
+            <br />
+                @if (user.Children == null || user.Children.Count ==0)
+                    continue;
+                else{
+                    <div style="margin-left: 2em;">
+                    @RenderChildren(user.Children)
+                    </div>
+                }
+            }
+        }
+    </div>
+}
+else
+{
+    <p>No users found.</p>
+}
+@functions {
+    public IHtmlContent RenderChildren(List<User> children)
+    {
+        var content = new System.Text.StringBuilder();
+        foreach (var child in children)
+        {
+            content.AppendLine("<li style = 'margin-left: 50px;'><br/>");
+            content.AppendLine($"<a class=\"boxed-link\"><img src=\"/{child.Img}\" alt=\"{child.Name}\" style=\"width: 120px; height: 150px; border: 1px solid black;\"/><br/>{child.Name}</a>");
+            content.AppendLine($" <a href='{Url.Page("/Bodt/Details")}?id={child.UserId}'>Detail</a>");
+
+            // check for id of husband/wife
+            content.AppendLine(RenderPartner(child).ToString());
+            //check if user has any children, if yes, continue render
+            if (child.Children != null)
+            {
+                content.AppendLine("<ul>");
+                content.AppendLine(RenderChildren(child.Children).ToString());
+                content.AppendLine("</ul>");
+            }
+            content.AppendLine("</li>");
+        }
+        return new HtmlString(content.ToString());
+    }
+
+
+    public IHtmlContent RenderPartner(User user){
+        var content = new System.Text.StringBuilder();
+        if(user.PartnerId >0){
+            for (int i = 0; i < Model.Users.Count; i++)
+            {
+                if (user.PartnerId == Model.Users[i].UserId)
+                {
+                    content.AppendLine($"<a class=\"boxed-link\"><img src=\"/{Model.Users[i].Img}\" alt=\"{Model.Users[i].Name}\" style=\"width: 120px; height: 150px; border: 1px solid black;\"/><br/>{Model.Users[i].Name}</a>");
+                    content.AppendLine($" <a href='{Url.Page("/Bodt/Details")}?id={user.PartnerId}'>Detail</a>");
+                    break;
+                }
+            }
+        }
+        return new HtmlString(content.ToString());
+    }
+
+    public IHtmlContent RenderMain(User user)
+    {
+        var content = new System.Text.StringBuilder();
+        if (user != null)
+        {
+            content.AppendLine($"<a class=\"boxed-link\"><img src=\"/{user.Img}\" alt=\"{user.Name}\" style=\"width: 120px; height: 150px; border: 1px solid black;\"/><br/>{user.Name}</a>");
+            content.AppendLine($" <a href='{Url.Page("/Bodt/Details")}?id={user.UserId}'>Detail</a>");
+
+        }
+        return new HtmlString(content.ToString());
+    }
+}
+

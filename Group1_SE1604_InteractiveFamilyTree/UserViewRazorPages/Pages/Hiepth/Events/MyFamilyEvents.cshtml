@@ -1,0 +1,56 @@
+﻿@page
+@model UserViewRazorPages.Pages.Hiepth.Events.MyFamilyEventsModel
+@{
+    ViewData["Title"] = "My Family Events";
+    Layout = "_UserLayout";
+}
+
+<h2>My family events</h2>
+
+<div class="d-flex col-4">
+    <form class="input-group w-auto" method="post" asp-page-handler="search">
+        <input type="text" class="form-control" name="value" placeholder="Event name"/>
+        <button class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Creator</th>
+            <th scope="col">Information</th>
+            <th scope="col">Location</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Events)
+        {
+            <tr data-href="Detail?id=@item.EventId" style="cursor: pointer;">
+                <td>@item.EventId</td>
+                <td>@item.EventName</td>
+                <td>@item.Creator.Name</td>
+                <td>@item.Information</td>
+                <td>@item.Location</td>
+                <td>@item.StartDate</td>
+                <td>@item.EndDate</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const rows = document.querySelectorAll("tr[data-href]");
+        rows.forEach(row => {
+            row.addEventListener("click", () => {
+                window.location.href = row.dataset.href;
+            })
+        });
+    });
+</script>

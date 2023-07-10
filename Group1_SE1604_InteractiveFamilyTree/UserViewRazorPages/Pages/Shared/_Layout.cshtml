@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Family Tree Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.cs  s" />
+    <link rel="stylesheet" href="~/css/normalize.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/login.min.css" />
+</head>
+<body>
+    <header>
+    </header>                     
+    <div id="wrapper" class="row">
+        <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion col-md-4 text-center justify-content-center" id="accordionSidebar">
+            <div class="sidebar-brand d-flex align-items-center justify-content-center" style="font-size:30px" >FAMILY TREE</div>
+            <div class="sidebar-brand d-flex align-items-center justify-content-center text-secondary" style="font-size:25px">EMPOWERING FAMILY CONNECTIONS</div>
+        </div>
+        <div id="content-wrapper" class="d-flex col-md-8 text-center justify-content-center">
+            <div id="content" class="d-flex align-items-center justify-content-center">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
