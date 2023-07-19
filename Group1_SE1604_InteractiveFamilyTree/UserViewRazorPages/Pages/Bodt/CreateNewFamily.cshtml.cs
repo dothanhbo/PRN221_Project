@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using BussinessObject.Models;
 using Repositories.Bodt.Imple;
 using Repositories.Bodt;
+using Newtonsoft.Json;
 
 namespace UserViewRazorPages.Pages.Bodt
 {
@@ -25,9 +26,8 @@ namespace UserViewRazorPages.Pages.Bodt
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public IActionResult OnPost()
         {
-            int newFamilyId = familyRepository.CreateNewFamily(Family);
-
-            return RedirectToPage("/Bodt/AddFirstUser", new { familyId = newFamilyId });
+            TempData["FamilyData"] = JsonConvert.SerializeObject(Family);
+            return RedirectToPage("/Bodt/AddFirstUser");
         }
     }
 }

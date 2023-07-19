@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace DataAcessObject.Bodt
 {
     public class UserDAO
@@ -43,22 +42,6 @@ namespace DataAcessObject.Bodt
                 throw new Exception(ex.Message);
             }
             return users;
-        }
-
-        public User Login(string email, string password)
-        {
-            User user = new User();
-            try
-            {
-
-                user = context.Users.SingleOrDefault(x => x.Email.ToLower().Equals(email.ToLower()) && x.Password.Equals(password));
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-            return user;
         }
 
         public User GetUser(int userId)
@@ -102,6 +85,8 @@ namespace DataAcessObject.Bodt
             {
                 if (GetUser(user.UserId) == null)
                 {
+                    if (user.Password != null)
+                        user.Password = Util.Util.MD5Hash(user.Password);
                     context.Users.Add(user);
                     context.SaveChanges();
                 }
@@ -128,6 +113,7 @@ namespace DataAcessObject.Bodt
                 if (u != null)
                 {
                     context.Entry(u).State = EntityState.Detached;
+                    user.Password = Util.Util.MD5Hash(user.Password);
                     context.Users.Update(user);
                     context.SaveChanges();
                 }

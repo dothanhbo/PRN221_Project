@@ -35,12 +35,6 @@ namespace Repositories.Bodt
         {
             return userDAO.GetUserListByFamilyId(familyId);
         }
-
-        public User Login(string email, string password)
-        {
-            return userDAO.Login(email, password);
-        }
-
         public void Update(User user) => userDAO.Update(user);
 
         public List<User> searchUser(string search)

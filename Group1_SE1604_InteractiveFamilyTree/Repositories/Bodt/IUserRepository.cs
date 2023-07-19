@@ -19,8 +19,6 @@ namespace Repositories.Bodt.Imple
         public User GetUserByEmail(string email);
 
         public List<User> GetUserList();
-        public User Login(string email, string password);
-
         public void Update(User user);
 
         public List<User> searchUser(string search);

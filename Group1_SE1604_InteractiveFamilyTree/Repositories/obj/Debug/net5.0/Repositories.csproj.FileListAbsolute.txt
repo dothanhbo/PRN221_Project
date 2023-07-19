@@ -1,0 +1,17 @@
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\Repositories.deps.json
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\Repositories.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\Repositories.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\BussinessObject.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\DataAcessObject.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\DataAcessObject.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\bin\Debug\net5.0\BussinessObject.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.AssemblyInfo.cs
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\refint\Repositories.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\Repositories.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\Repositories\obj\Debug\net5.0\ref\Repositories.dll

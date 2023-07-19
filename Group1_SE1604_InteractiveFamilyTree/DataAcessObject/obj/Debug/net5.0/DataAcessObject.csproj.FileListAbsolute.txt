@@ -1,0 +1,15 @@
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\bin\Debug\net5.0\DataAcessObject.deps.json
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\bin\Debug\net5.0\DataAcessObject.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\bin\Debug\net5.0\DataAcessObject.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\bin\Debug\net5.0\BussinessObject.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\bin\Debug\net5.0\BussinessObject.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.AssemblyInfo.cs
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\refint\DataAcessObject.dll
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\DataAcessObject.pdb
+C:\Users\ADMIN\Desktop\PRN221_Project\Group1_SE1604_InteractiveFamilyTree\DataAcessObject\obj\Debug\net5.0\ref\DataAcessObject.dll

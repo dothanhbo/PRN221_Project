@@ -47,6 +47,7 @@ namespace DataAcessObject.Bodt
             {
                 if (GetAdmin(admin.AdminId) == null)
                 {
+                    admin.Password = Util.Util.MD5Hash(admin.Password);
                     context.Admins.Add(admin);
                     context.SaveChanges();
                 }
@@ -65,7 +66,7 @@ namespace DataAcessObject.Bodt
         {
             if (admin == null)
             {
-                throw new Exception("User is undefined!!");
+                throw new Exception("Admin is undefined!!");
             }
             try
             {
@@ -73,6 +74,7 @@ namespace DataAcessObject.Bodt
                 if (a != null)
                 {
                     context.Entry(a).State = EntityState.Detached;
+                    admin.Password = Util.Util.MD5Hash(admin.Password);
                     context.Admins.Update(admin);
                     context.SaveChanges();
                 }

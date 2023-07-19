@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
+using Newtonsoft.Json;
 
 namespace UserViewRazorPages.Pages.Bodt
 {
@@ -30,16 +31,41 @@ namespace UserViewRazorPages.Pages.Bodt
         public string selectedGender { get; set; }
         [BindProperty]
         public IFormFile ImageFile { get; set; }
-        [BindProperty]
-        public int FamilyId { get; set; }
-        public IActionResult OnGet(int familyId)
+        public Family NewFamily { get; set; }
+        public IActionResult OnGet()
         {
-            FamilyId = familyId;
+            if (TempData.ContainsKey("FamilyData"))
+            {
+                string familyDataJson = TempData["FamilyData"] as string;
+                NewFamily = JsonConvert.DeserializeObject<Family>(familyDataJson);
+                HttpContext.Session.SetString("NewFamilyData", familyDataJson);
+            }
+            else
+            {
+                // Handle the case when TempData does not contain the data
+                // For example, you can redirect to an error page or perform some other action.
+                return NotFound();
+            }
             return Page();
         }
         public IActionResult OnPost()
         {
-            User.FamilyId = FamilyId;
+            int familyId;
+            string familyDataJson = HttpContext.Session.GetString("NewFamilyData");
+
+            if (familyDataJson != null)
+            {
+                NewFamily = JsonConvert.DeserializeObject<Family>(familyDataJson);
+                familyId = familyRepository.CreateNewFamily(NewFamily);
+                // Clear the session data after use
+                HttpContext.Session.Remove("NewFamilyData");
+            }
+            else
+            {
+                // Handle the case when the data is not available
+                return NotFound();
+            }
+            User.FamilyId = familyId;
             User.Gender = (selectedGender == "Male") ? true : false;
             UploadImage(ImageFile);
             User.Code = RandomCodeGenerator.GenerateRandomCode();

@@ -1,4 +1,5 @@
 ﻿using BussinessObject.Models;
+using DataAcessObject.Util;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace DataAccesObject.Dangptm
             User user = new User();
             try
             {
-
+                password = Util.MD5Hash(password);
                 user = context.Users.SingleOrDefault(x => x.Email.ToLower().Equals(email.ToLower()) && x.Password.Equals(password));
             }
             catch (Exception ex)
@@ -66,7 +67,7 @@ namespace DataAccesObject.Dangptm
             Admin admin = new Admin();
             try
             {
-
+                password = Util.MD5Hash(password);
                 admin = context.Admins.SingleOrDefault(x => x.Email.ToLower().Equals(email.ToLower()) && x.Password.Equals(password));
             }
             catch (Exception ex)
@@ -95,34 +96,34 @@ namespace DataAccesObject.Dangptm
 
         public User GetUserByEmail(string email)
         {
-            User customer = null;
+            User user = null;
 
             try
             {
-                customer = context.Users.SingleOrDefault(u => u.Email.ToLower().Equals(email.ToLower()));
+                user = context.Users.SingleOrDefault(u => u.Email.ToLower().Equals(email.ToLower()));
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
 
-            return customer;
+            return user;
         }
 
         public User GetUserByCode(string code)
         {
-            User customer = null;
+            User user = null;
 
             try
             {
-                customer = context.Users.SingleOrDefault(u => u.Code.ToLower().Equals(code.ToLower()));
+                user = context.Users.SingleOrDefault(u => u.Code.ToLower().Equals(code.ToLower()));
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
 
-            return customer;
+            return user;
         }
 
         public void AddUser(User user)
@@ -135,6 +136,7 @@ namespace DataAccesObject.Dangptm
             {
                 if (GetUser(user.UserId) == null && GetUserByEmail(user.Email) == null)
                 {
+                    user.Password = Util.MD5Hash(user.Password);
                     context.Users.Add(user);
                     context.SaveChanges();
                 }
@@ -161,6 +163,7 @@ namespace DataAccesObject.Dangptm
                 if (u != null && GetUserByEmail(user.Email)== null)
                 {
                     context.Entry(u).State = EntityState.Detached;
+                    user.Password = Util.MD5Hash(user.Password);
                     context.Users.Update(user);
                     context.SaveChanges();
                 }
